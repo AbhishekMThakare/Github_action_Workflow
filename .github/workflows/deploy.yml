@@ -1,0 +1,18 @@
+name: Conditional Deployment Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run Build Step
+        run: echo "Pipeline triggered because code was pushed to main or feature branch."
